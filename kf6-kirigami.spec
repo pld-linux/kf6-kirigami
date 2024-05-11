@@ -5,17 +5,17 @@
 # TODO:
 # - runtime Requires if any
 
-%define		kdeframever	6.1
+%define		kdeframever	6.2
 %define		qtver		5.15.2
 %define		kfname		kirigami
 Summary:	Kirigami library
 Name:		kf6-%{kfname}
-Version:	6.1.0
+Version:	6.2.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	d052029caf5d6411507d326609292700
+# Source0-md5:	1b439c230b9b1564ae8cdac97f72e2ae
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6Gui-devel >= %{qtver}
