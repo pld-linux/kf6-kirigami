@@ -5,17 +5,17 @@
 # TODO:
 # - runtime Requires if any
 
-%define		kdeframever	6.2
+%define		kdeframever	6.3
 %define		qtver		5.15.2
 %define		kfname		kirigami
 Summary:	Kirigami library
 Name:		kf6-%{kfname}
-Version:	6.2.0
+Version:	6.3.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	1b439c230b9b1564ae8cdac97f72e2ae
+# Source0-md5:	c6827ad6363921efc3484cb47a3aef21
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6Gui-devel >= %{qtver}
@@ -31,7 +31,7 @@ BuildRequires:	rpmbuild(macros) >= 1.164
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires:	kf6-dirs
-Obsoletes:	kf5-kirigami2 < %{version}
+#Obsoletes:	kf5-kirigami2 < %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -42,7 +42,7 @@ Summary:	Header files for %{kfname} development
 Summary(pl.UTF-8):	Pliki nagłówkowe dla programistów używających %{kfname}
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Obsoletes:	kf5-kirigami2-devel < %{version}
+#Obsoletes:	kf5-kirigami2-devel < %{version}
 
 %description devel
 Header files for %{kfname} development.
@@ -88,7 +88,12 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libKirigamiPlatform.so.*.*
 %ghost %{_libdir}/libKirigamiPlatform.so.6
 %{_datadir}/qlogging-categories6/kirigami.categories
-
+%ghost %{_libdir}/libKirigamiDialogs.so.6
+%attr(755,root,root) %{_libdir}/libKirigamiDialogs.so.*.*
+%ghost %{_libdir}/libKirigamiLayouts.so.6
+%attr(755,root,root) %{_libdir}/libKirigamiLayouts.so.*.*
+%ghost %{_libdir}/libKirigamiPrimitives.so.6
+%attr(755,root,root) %{_libdir}/libKirigamiPrimitives.so.*.*
 
 %files devel
 %defattr(644,root,root,755)
@@ -98,5 +103,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/cmake/KF6KirigamiPlatform
 %{_libdir}/libKirigami.so
 %{_libdir}/libKirigamiDelegates.so
+%{_libdir}/libKirigamiDialogs.so
+%{_libdir}/libKirigamiLayouts.so
 %{_libdir}/libKirigamiPlatform.so
+%{_libdir}/libKirigamiPrimitives.so
 %{_datadir}/kdevappwizard/templates/kirigami6.tar.bz2
