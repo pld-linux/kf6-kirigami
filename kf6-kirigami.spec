@@ -11,7 +11,7 @@
 Summary:	Kirigami library
 Name:		kf6-%{kfname}
 Version:	6.6.0
-Release:	1
+Release:	2
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
@@ -70,6 +70,8 @@ Pliki nagłówkowe dla programistów używających %{kfname}.
 rm -rf $RPM_BUILD_ROOT
 %ninja_install -C build
 
+install -d $RPM_BUILD_ROOT%{_libdir}/qt6/plugins/kf6/kirigami/platform
+
 %find_lang libkirigami6 --with-qm
 
 %clean
@@ -96,6 +98,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libKirigamiPrimitives.so.*.*
 %ghost %{_libdir}/libKirigamiPrivate.so.6
 %attr(755,root,root) %{_libdir}/libKirigamiPrivate.so.*.*
+%dir %{_libdir}/qt6/plugins/kf6/kirigami
+%dir %{_libdir}/qt6/plugins/kf6/kirigami/platform
+
 
 %files devel
 %defattr(644,root,root,755)
