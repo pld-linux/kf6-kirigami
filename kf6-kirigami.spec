@@ -11,7 +11,7 @@
 Summary:	Kirigami library
 Name:		kf6-%{kfname}
 Version:	6.11.0
-Release:	1
+Release:	2
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
@@ -21,6 +21,7 @@ BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6Gui-devel >= %{qtver}
 BuildRequires:	Qt6Network-devel >= %{qtver}
 BuildRequires:	Qt6Quick-devel >= %{qtver}
+BuildRequires:	Qt6ShaderTools-devel >= %{qtver}
 BuildRequires:	Qt6Test-devel >= %{qtver}
 BuildRequires:	catdoc
 BuildRequires:	cmake >= 3.16
