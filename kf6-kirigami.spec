@@ -5,17 +5,17 @@
 # TODO:
 # - runtime Requires if any
 
-%define		kdeframever	6.16
+%define		kdeframever	6.17
 %define		qtver		5.15.2
 %define		kfname		kirigami
 Summary:	Kirigami library
 Name:		kf6-%{kfname}
-Version:	6.16.0
+Version:	6.17.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	7a07b9bc191f82a34ef9c2e56bee6107
+# Source0-md5:	9c3167fb2f81a610149d0baa9086cd03
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6Gui-devel >= %{qtver}
@@ -103,6 +103,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libKirigamiPrimitives.so.*.*
 %ghost %{_libdir}/libKirigamiPrivate.so.6
 %attr(755,root,root) %{_libdir}/libKirigamiPrivate.so.*.*
+%ghost %{_libdir}/libKirigamiTemplates.so.6
+%attr(755,root,root) %{_libdir}/libKirigamiTemplates.so.*.*
 %dir %{_libdir}/qt6/plugins/kf6/kirigami
 %dir %{_libdir}/qt6/plugins/kf6/kirigami/platform
 
@@ -122,4 +124,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libKirigamiPolyfill.so
 %{_libdir}/libKirigamiPrimitives.so
 %{_libdir}/libKirigamiPrivate.so
+%{_libdir}/libKirigamiTemplates.so
 %{_datadir}/kdevappwizard/templates/kirigami6.tar.bz2
