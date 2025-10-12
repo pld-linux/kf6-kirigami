@@ -5,17 +5,17 @@
 # TODO:
 # - runtime Requires if any
 
-%define		kdeframever	6.18
+%define		kdeframever	6.19
 %define		qtver		5.15.2
 %define		kfname		kirigami
 Summary:	Kirigami library
 Name:		kf6-%{kfname}
-Version:	6.18.0
+Version:	6.19.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	1588a7a97ea81e883a80ae117655d5e1
+# Source0-md5:	42f622bf5c00195ab73c21066ddf68a2
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6Gui-devel >= %{qtver}
@@ -85,27 +85,27 @@ rm -rf $RPM_BUILD_ROOT
 %files -f libkirigami6.lang
 %defattr(644,root,root,755)
 %{_libdir}/qt6/qml/org/kde/kirigami
-%attr(755,root,root) %{_libdir}/libKirigami.so.*.*
+%{_libdir}/libKirigami.so.*.*
 %ghost %{_libdir}/libKirigami.so.6
-%attr(755,root,root) %{_libdir}/libKirigamiDelegates.so.*.*
+%{_libdir}/libKirigamiDelegates.so.*.*
 %ghost %{_libdir}/libKirigamiDelegates.so.6
-%attr(755,root,root) %{_libdir}/libKirigamiPolyfill.so.*.*
+%{_libdir}/libKirigamiPolyfill.so.*.*
 %ghost %{_libdir}/libKirigamiPolyfill.so.6
-%attr(755,root,root) %{_libdir}/libKirigamiPlatform.so.*.*
+%{_libdir}/libKirigamiPlatform.so.*.*
 %ghost %{_libdir}/libKirigamiPlatform.so.6
 %{_datadir}/qlogging-categories6/kirigami.categories
 %ghost %{_libdir}/libKirigamiDialogs.so.6
-%attr(755,root,root) %{_libdir}/libKirigamiDialogs.so.*.*
+%{_libdir}/libKirigamiDialogs.so.*.*
 %ghost %{_libdir}/libKirigamiLayouts.so.6
-%attr(755,root,root) %{_libdir}/libKirigamiLayouts.so.*.*
+%{_libdir}/libKirigamiLayouts.so.*.*
 %ghost %{_libdir}/libKirigamiLayoutsPrivate.so.6
-%attr(755,root,root) %{_libdir}/libKirigamiLayoutsPrivate.so.*.*
+%{_libdir}/libKirigamiLayoutsPrivate.so.*.*
 %ghost %{_libdir}/libKirigamiPrimitives.so.6
-%attr(755,root,root) %{_libdir}/libKirigamiPrimitives.so.*.*
+%{_libdir}/libKirigamiPrimitives.so.*.*
 %ghost %{_libdir}/libKirigamiPrivate.so.6
-%attr(755,root,root) %{_libdir}/libKirigamiPrivate.so.*.*
+%{_libdir}/libKirigamiPrivate.so.*.*
 %ghost %{_libdir}/libKirigamiTemplates.so.6
-%attr(755,root,root) %{_libdir}/libKirigamiTemplates.so.*.*
+%{_libdir}/libKirigamiTemplates.so.*.*
 %dir %{_libdir}/qt6/plugins/kf6/kirigami
 %dir %{_libdir}/qt6/plugins/kf6/kirigami/platform
 
