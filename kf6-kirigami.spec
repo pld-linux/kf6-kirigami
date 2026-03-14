@@ -5,17 +5,17 @@
 # TODO:
 # - runtime Requires if any
 
-%define		kdeframever	6.23
+%define		kdeframever	6.24
 %define		qtver		6.8.0
 %define		kfname		kirigami
 Summary:	Kirigami library
 Name:		kf6-%{kfname}
-Version:	6.23.1
+Version:	6.24.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	a56601923ca393d98ce5f42e6153d95b
+# Source0-md5:	397424fcb793552be383e0f8005f2985
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6Gui-devel >= %{qtver}
@@ -88,6 +88,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt6/qml/org/kde/kirigami
 %{_libdir}/libKirigami.so.*.*
 %ghost %{_libdir}/libKirigami.so.6
+%{_libdir}/libKirigamiControls.so.*.*
+%ghost %{_libdir}/libKirigamiControls.so.6
 %{_libdir}/libKirigamiDelegates.so.*.*
 %ghost %{_libdir}/libKirigamiDelegates.so.6
 %{_libdir}/libKirigamiPolyfill.so.*.*
@@ -118,6 +120,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/cmake/KF6Kirigami2
 %{_libdir}/cmake/KF6KirigamiPlatform
 %{_libdir}/libKirigami.so
+%{_libdir}/libKirigamiControls.so
 %{_libdir}/libKirigamiDelegates.so
 %{_libdir}/libKirigamiDialogs.so
 %{_libdir}/libKirigamiLayouts.so
