@@ -5,17 +5,17 @@
 # TODO:
 # - runtime Requires if any
 
-%define		kdeframever	6.25
+%define		kdeframever	6.26
 %define		qtver		6.8.0
 %define		kfname		kirigami
 Summary:	Kirigami library
 Name:		kf6-%{kfname}
-Version:	6.25.0
-Release:	2
+Version:	6.26.0
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	a1c887e32c99e395dc994f4a022bf759
+# Source0-md5:	b672eee8d5acaae52502523c94c712a8
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6Gui-devel >= %{qtver}
@@ -99,6 +99,14 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/qlogging-categories6/kirigami.categories
 %ghost %{_libdir}/libKirigamiDialogs.so.6
 %{_libdir}/libKirigamiDialogs.so.*.*
+%ghost %{_libdir}/libKirigamiForms.so.6
+%{_libdir}/libKirigamiForms.so.*.*
+%ghost %{_libdir}/libKirigamiFormsPrivateCards.so.6
+%{_libdir}/libKirigamiFormsPrivateCards.so.*.*
+%ghost %{_libdir}/libKirigamiFormsPrivateFlat.so.6
+%{_libdir}/libKirigamiFormsPrivateFlat.so.*.*
+%ghost %{_libdir}/libKirigamiFormsPrivateTemplates.so.6
+%{_libdir}/libKirigamiFormsPrivateTemplates.so.*.*
 %ghost %{_libdir}/libKirigamiLayouts.so.6
 %{_libdir}/libKirigamiLayouts.so.*.*
 %ghost %{_libdir}/libKirigamiLayoutsPrivate.so.6
@@ -112,7 +120,6 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_libdir}/qt6/plugins/kf6/kirigami
 %dir %{_libdir}/qt6/plugins/kf6/kirigami/platform
 
-
 %files devel
 %defattr(644,root,root,755)
 %{_includedir}/KF6/Kirigami
@@ -123,6 +130,10 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libKirigamiControls.so
 %{_libdir}/libKirigamiDelegates.so
 %{_libdir}/libKirigamiDialogs.so
+%{_libdir}/libKirigamiForms.so
+%{_libdir}/libKirigamiFormsPrivateCards.so
+%{_libdir}/libKirigamiFormsPrivateFlat.so
+%{_libdir}/libKirigamiFormsPrivateTemplates.so
 %{_libdir}/libKirigamiLayouts.so
 %{_libdir}/libKirigamiLayoutsPrivate.so
 %{_libdir}/libKirigamiPlatform.so
